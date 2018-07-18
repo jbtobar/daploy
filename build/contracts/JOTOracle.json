@@ -1,0 +1,1238 @@
+{
+  "contractName": "JOTOracle",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "JOTtoETH",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "CallbackGetJOT",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "updateJOT",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_price",
+          "type": "uint256"
+        }
+      ],
+      "name": "setJOT",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRTS",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610257806100606000396000f30060806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806313c218461461007257806323defb081461009f578063385c9767146100ca5780635f35f974146100f55780638da5cb5b1461010c575b600080fd5b34801561007e57600080fd5b5061009d60048036038101908080359060200190929190505050610163565b005b3480156100ab57600080fd5b506100b46101c8565b6040518082815260200191505060405180910390f35b3480156100d657600080fd5b506100df6101d2565b6040518082815260200191505060405180910390f35b34801561010157600080fd5b5061010a6101d8565b005b34801561011857600080fd5b50610121610206565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101be57600080fd5b8060018190555050565b6000600154905090565b60015481565b7f8c5be4925a6b7ee9e8e2e238ca173ef4ed7a52a3ccc2d6b2b7f29dc5e3e8bcfe60405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16815600a165627a7a7230582014557107ddb59fa4a3ef4b93f4ed4965e5267b4ad13c2910e06da9a2d1ae33c40029",
+  "deployedBytecode": "0x60806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806313c218461461007257806323defb081461009f578063385c9767146100ca5780635f35f974146100f55780638da5cb5b1461010c575b600080fd5b34801561007e57600080fd5b5061009d60048036038101908080359060200190929190505050610163565b005b3480156100ab57600080fd5b506100b46101c8565b6040518082815260200191505060405180910390f35b3480156100d657600080fd5b506100df6101d2565b6040518082815260200191505060405180910390f35b34801561010157600080fd5b5061010a6101d8565b005b34801561011857600080fd5b50610121610206565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101be57600080fd5b8060018190555050565b6000600154905090565b60015481565b7f8c5be4925a6b7ee9e8e2e238ca173ef4ed7a52a3ccc2d6b2b7f29dc5e3e8bcfe60405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16815600a165627a7a7230582014557107ddb59fa4a3ef4b93f4ed4965e5267b4ad13c2910e06da9a2d1ae33c40029",
+  "sourceMap": "26:611:4:-;;;227:50;8:9:-1;5:2;;;30:1;27;20:12;5:2;227:50:4;262:10;254:5;;:18;;;;;;;;;;;;;;;;;;26:611;;;;;;",
+  "deployedSourceMap": "26:611:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;380:176;;8:9:-1;5:2;;;30:1;27;20:12;5:2;380:176:4;;;;;;;;;;;;;;;;;;;;;;;;;;560:75;;8:9:-1;5:2;;;30:1;27;20:12;5:2;560:75:4;;;;;;;;;;;;;;;;;;;;;;;152:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;152:20:4;;;;;;;;;;;;;;;;;;;;;;;281:95;;8:9:-1;5:2;;;30:1;27;20:12;5:2;281:95:4;;;;;;69:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;69:20:4;;;;;;;;;;;;;;;;;;;;;;;;;;;380:176;522:5;;;;;;;;;;;508:19;;:10;:19;;;500:28;;;;;;;;545:6;534:8;:17;;;;380:176;:::o;560:75::-;603:4;622:8;;615:15;;560:75;:::o;152:20::-;;;;:::o;281:95::-;355:16;;;;;;;;;;281:95::o;69:20::-;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.17;\n\ncontract JOTOracle {\n  // Contract owner\n  address public owner;\n\n  // BTC Marketcap Storage\n  // uint public btcMarketCap;\n  uint public JOTtoETH;\n\n  // Callback function\n  event CallbackGetJOT();\n\n  constructor() public {\n    owner = msg.sender;\n  }\n\n  function updateJOT() public {\n    // Calls the callback function\n    emit CallbackGetJOT();\n  }\n\n  function setJOT(uint _price) public {\n    // If it isn't sent by a trusted oracle\n    // a.k.a ourselves, ignore it\n    require(msg.sender == owner);\n    JOTtoETH = _price;\n  }\n\n  function getRTS() constant public returns (uint) {\n    return JOTtoETH;\n  }\n}\n",
+  "sourcePath": "/Users/juanbernardotobar/lacanoa/daploy/contracts/JOTOracle.sol",
+  "ast": {
+    "absolutePath": "/Users/juanbernardotobar/lacanoa/daploy/contracts/JOTOracle.sol",
+    "exportedSymbols": {
+      "JOTOracle": [
+        2788
+      ]
+    },
+    "id": 2789,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2740,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2788,
+        "linearizedBaseContracts": [
+          2788
+        ],
+        "name": "JOTOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2742,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 2788,
+            "src": "69:20:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 2741,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "69:7:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 2744,
+            "name": "JOTtoETH",
+            "nodeType": "VariableDeclaration",
+            "scope": 2788,
+            "src": "152:20:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2743,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "152:4:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2746,
+            "name": "CallbackGetJOT",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2745,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "220:2:4"
+            },
+            "src": "200:23:4"
+          },
+          {
+            "body": {
+              "id": 2754,
+              "nodeType": "Block",
+              "src": "248:29:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2752,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2749,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2742,
+                      "src": "254:5:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2750,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2959,
+                        "src": "262:3:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 2751,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "262:10:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "254:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 2753,
+                  "nodeType": "ExpressionStatement",
+                  "src": "254:18:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2755,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2747,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "238:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2748,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "248:0:4"
+            },
+            "scope": 2788,
+            "src": "227:50:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2761,
+              "nodeType": "Block",
+              "src": "309:67:4",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 2758,
+                      "name": "CallbackGetJOT",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2746,
+                      "src": "355:14:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 2759,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "355:16:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2760,
+                  "nodeType": "EmitStatement",
+                  "src": "350:21:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2762,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "updateJOT",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2756,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "299:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2757,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "309:0:4"
+            },
+            "scope": 2788,
+            "src": "281:95:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2778,
+              "nodeType": "Block",
+              "src": "416:140:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 2771,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2768,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2959,
+                            "src": "508:3:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 2769,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "508:10:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 2770,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2742,
+                          "src": "522:5:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "508:19:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 2767,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        2962,
+                        2963
+                      ],
+                      "referencedDeclaration": 2962,
+                      "src": "500:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 2772,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "500:28:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2773,
+                  "nodeType": "ExpressionStatement",
+                  "src": "500:28:4"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2776,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2774,
+                      "name": "JOTtoETH",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2744,
+                      "src": "534:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 2775,
+                      "name": "_price",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2764,
+                      "src": "545:6:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "534:17:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 2777,
+                  "nodeType": "ExpressionStatement",
+                  "src": "534:17:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2779,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setJOT",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2765,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2764,
+                  "name": "_price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2779,
+                  "src": "396:11:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2763,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "396:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "395:13:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2766,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "416:0:4"
+            },
+            "scope": 2788,
+            "src": "380:176:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2786,
+              "nodeType": "Block",
+              "src": "609:26:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2784,
+                    "name": "JOTtoETH",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 2744,
+                    "src": "622:8:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 2783,
+                  "id": 2785,
+                  "nodeType": "Return",
+                  "src": "615:15:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2787,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getRTS",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2780,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "575:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2783,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2782,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2787,
+                  "src": "603:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2781,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "603:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "602:6:4"
+            },
+            "scope": 2788,
+            "src": "560:75:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2789,
+        "src": "26:611:4"
+      }
+    ],
+    "src": "0:638:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/juanbernardotobar/lacanoa/daploy/contracts/JOTOracle.sol",
+    "exportedSymbols": {
+      "JOTOracle": [
+        2788
+      ]
+    },
+    "id": 2789,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2740,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2788,
+        "linearizedBaseContracts": [
+          2788
+        ],
+        "name": "JOTOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2742,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 2788,
+            "src": "69:20:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 2741,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "69:7:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 2744,
+            "name": "JOTtoETH",
+            "nodeType": "VariableDeclaration",
+            "scope": 2788,
+            "src": "152:20:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2743,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "152:4:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2746,
+            "name": "CallbackGetJOT",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2745,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "220:2:4"
+            },
+            "src": "200:23:4"
+          },
+          {
+            "body": {
+              "id": 2754,
+              "nodeType": "Block",
+              "src": "248:29:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2752,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2749,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2742,
+                      "src": "254:5:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2750,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2959,
+                        "src": "262:3:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 2751,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "262:10:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "254:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 2753,
+                  "nodeType": "ExpressionStatement",
+                  "src": "254:18:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2755,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2747,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "238:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2748,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "248:0:4"
+            },
+            "scope": 2788,
+            "src": "227:50:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2761,
+              "nodeType": "Block",
+              "src": "309:67:4",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 2758,
+                      "name": "CallbackGetJOT",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2746,
+                      "src": "355:14:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 2759,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "355:16:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2760,
+                  "nodeType": "EmitStatement",
+                  "src": "350:21:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2762,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "updateJOT",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2756,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "299:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2757,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "309:0:4"
+            },
+            "scope": 2788,
+            "src": "281:95:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2778,
+              "nodeType": "Block",
+              "src": "416:140:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 2771,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2768,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2959,
+                            "src": "508:3:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 2769,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "508:10:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 2770,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2742,
+                          "src": "522:5:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "508:19:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 2767,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        2962,
+                        2963
+                      ],
+                      "referencedDeclaration": 2962,
+                      "src": "500:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 2772,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "500:28:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2773,
+                  "nodeType": "ExpressionStatement",
+                  "src": "500:28:4"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2776,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2774,
+                      "name": "JOTtoETH",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2744,
+                      "src": "534:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 2775,
+                      "name": "_price",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2764,
+                      "src": "545:6:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "534:17:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 2777,
+                  "nodeType": "ExpressionStatement",
+                  "src": "534:17:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2779,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setJOT",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2765,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2764,
+                  "name": "_price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2779,
+                  "src": "396:11:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2763,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "396:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "395:13:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2766,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "416:0:4"
+            },
+            "scope": 2788,
+            "src": "380:176:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2786,
+              "nodeType": "Block",
+              "src": "609:26:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2784,
+                    "name": "JOTtoETH",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 2744,
+                    "src": "622:8:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 2783,
+                  "id": 2785,
+                  "nodeType": "Return",
+                  "src": "615:15:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2787,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getRTS",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2780,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "575:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2783,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2782,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2787,
+                  "src": "603:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2781,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "603:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "602:6:4"
+            },
+            "scope": 2788,
+            "src": "560:75:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2789,
+        "src": "26:611:4"
+      }
+    ],
+    "src": "0:638:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "1531472351614": {
+      "events": {},
+      "links": {},
+      "address": "0x92bff268ae7974e757055246adb65abbadd3abba",
+      "transactionHash": "0x49793182a802dfc03b729b5dd73cbc3dcd78c081e111c9007c938cb6117aa0e8"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-07-18T10:18:00.703Z"
+}
