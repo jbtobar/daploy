@@ -1,14 +1,13 @@
+require('dotenv').config()
 const express        = require('express');
-// const MongoClient    = require('mongodb').MongoClient;
 const bodyParser     = require('body-parser');
-// const db             = require('./config/db');
 // const jwt = require('jsonwebtoken')
 var Web3 = require('web3');
 var HDWalletProvider = require("truffle-hdwallet-provider");
-const mnemonic = 'hair route suffer hood brother virus carbon fall song jewel food upset business reunion pull'
-var provider = new HDWalletProvider(mnemonic, "https://ropsten.infura.io/gvaDaupFKbFfrBVZ9cyE");
+const mnemonic = process.env.MNEMONIC
+var provider = new HDWalletProvider(mnemonic, "https://ropsten.infura.io/${process.env.INFURA_ACCESS_TOKEN}");
 web3 = new Web3(provider)
-console.log(provider.addresses[0])
+console.log(provider.addresses)
 
 
 const app            = express();

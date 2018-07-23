@@ -22,15 +22,15 @@ var ICOContract = new web3.eth.Contract(abiICO);
 // let code = bld.bytecode
 // var InvestContract = new web3.eth.Contract(abi);
 //
-bld = require('./build/contracts/Token.json')
-let abi = bld.abi
-let code = bld.bytecode
-var Token = new web3.eth.Contract(abi);
-//
-// bld = require('./build/contracts/JOTOracle.json')
+// bld = require('./build/contracts/Token.json')
 // let abi = bld.abi
 // let code = bld.bytecode
-// var JOTOracle = new web3.eth.Contract(abi);
+// var Token = new web3.eth.Contract(abi);
+// //
+bld = require('./build/contracts/JOTOracle.json')
+let abi = bld.abi
+let code = bld.bytecode
+var JOTOracle = new web3.eth.Contract(abi);
 
 function TokenContractDeploy() {
   console.log('TOKEN CONTRACT DEPLOY')
@@ -120,7 +120,7 @@ function OracleDeploy() {
     });
 
 }
-// OracleDeploy()
+OracleDeploy()
 oracleAddress = '0x6F00A696cEAb4c6FCEf70c3cbdba443D03e61DeC'
 var JOTOracleDeployed = new web3.eth.Contract(abi,oracleAddress);
 function OracleMess() {
@@ -258,7 +258,7 @@ function deployAnICO() {
 
 }
 
-deployAnICO()
+// deployAnICO()
 
   //
   //
