@@ -13,7 +13,7 @@ let Web3 = require('web3'); // https://www.npmjs.com/package/web3
 // For geth VPS server + SSH tunneling see
 // https://gist.github.com/miohtama/ce612b35415e74268ff243af645048f4
 let web3 = new Web3();
-web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
+web3.setProvider(new web3.providers.HttpProvider('https://ropsten.infura.io/gvaDaupFKbFfrBVZ9cyE'));
 
 // Read the compiled contract code
 // Compile with

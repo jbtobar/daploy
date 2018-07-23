@@ -7,9 +7,15 @@ var Web3 = require('web3');
 var web3 = new Web3(new Web3.providers.HttpProvider(url));
 
 ad1 = '0xe04202f262b79aa24e09f29a3461690efdf63f63'
-// web3.eth.getCoinbase().then(function(d){console.log(d)})
+//
+var HDWalletProvider = require("truffle-hdwallet-provider");
+const mnemonic = 'hair route suffer hood brother virus carbon fall song jewel food upset business reunion pull'
+var provider = new HDWalletProvider(mnemonic, url);
+web3 = new Web3(provider)
+//
 
-// web3.eth.getBalance(ad1).then(function(d){console.log(d)})
+const ad1 = provider.addresses[0]
+console.log(ad1)
 
 bld = require('./build/contracts/JOTOracle.json')
 let abi = bld.abi

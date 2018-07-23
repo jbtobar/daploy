@@ -49,7 +49,7 @@ params = {
 }
 
 
-
+// This is the first test to ABI interactio
 request.post(
     'http://localhost:3001/contracts/deploy/ICOContract',
     { json: params },

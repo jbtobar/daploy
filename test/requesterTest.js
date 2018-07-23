@@ -1,5 +1,4 @@
 // REQUEST TEST SCRIPT
-
 var request = require('request');
 var rp = require('request-promise')
 var expect  = require('chai').expect;
@@ -9,6 +8,14 @@ chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 // API URL
 const url = 'http://localhost:3001/contracts'
+
+
+// USEFUL NOTES
+//https://ethereum.stackexchange.com/questions/7255/deploy-contract-from-nodejs-using-web3
+
+
+juryOnlineWallet = '0xe04202f262b79aa24e09f29a3461690efdf63f63'
+jotTokenAddress = '0x7DB792f5c27860D4fEC36F2Dd9f85090f22590B4'
 
 params = {
   tokenName:'BTC',
@@ -78,18 +85,79 @@ describe('API MAIN ROUTES', function() {
   //   });
   // });
 
-  it('Deploys a Token', function(done) {
+  // it('Deploys a Token', function(done) {
+  //   params = {
+  //     tokenName: 'YES Token',
+  //     tokenSymbol: 'YEST',
+  //     tokenDecimals: 18.00
+  //   }
+  //   request.post({
+  //     headers: {'content-type' : 'application/x-www-form-urlencoded'},
+  //     url:     urlBase+'/contracts/deploy/Token',
+  //     // json:require('querystring').stringify(params)
+  //     form:params
+  //   },function(err, res) {
+  //     expect(res.statusCode).to.equal(200);
+  //     // expect(res.body).to.equal('wrong header');
+  //     console.log('         TxHash Below:')
+  //     console.log('         '+res.body)
+  //     console.log('         ------------------------')
+  //     console.log('         Response Status Code Below:')
+  //     console.log('         '+res.statusCode)
+  //     done()
+  //   })
+  // })
+
+  // it('Deploys a CommissionContract', function(done) {
+  //   params = {
+  //     juryOnlineWallet: juryOnlineWallet,
+  //     jotTokenAddress: jotTokenAddress
+  //   }
+  //   request.post({
+  //     headers: {'content-type' : 'application/x-www-form-urlencoded'},
+  //     url:     urlBase+'/contracts/deploy/CommissionContract',
+  //     // json:require('querystring').stringify(params)
+  //     form:params
+  //   },function(err, res) {
+  //     // console.log(Object.keys(res))
+  //     // console.log(res.statusMessage)
+  //     // console.log(res.body)
+  //     expect(res.statusCode).to.equal(200);
+  //     // expect(res.body).to.equal('wrong header');
+  //     console.log('         TxHash Below:')
+  //     console.log('         '+res.body)
+  //     console.log('         ------------------------')
+  //     console.log('         Response Status Code Below:')
+  //     console.log('         '+res.statusCode)
+  //     done()
+  //   })
+  //
+  // })
+
+  it('Deploys an ICOContract', function(done) {
+    this.timeout(2000000000);
     params = {
-      tokenName: 'YES Token',
-      tokenSymbol: 'YEST',
-      tokenDecimals: 18.00
+      tokenName:'BTC',
+      tokenSymbol:'btchj',
+      tokenDecimals:18,
+      projectWallet:'0xe04202f262b79aa24e09f29a3461690efdf63f63',
+      minimalInvestment:100,
+      operator:'0xe04202f262b79aa24e09f29a3461690efdf63f63',
+      quorum:2,
+      pay_in_jot:true,
+      sealTimestamp:2000000000
     }
+    // OTHER PARAMS FOR THIS FUNCTION INCLUDE
+
     request.post({
       headers: {'content-type' : 'application/x-www-form-urlencoded'},
-      url:     urlBase+'/contracts/deploy/Token',
+      url:     urlBase+'/contracts/deploy/ICOContract',
       // json:require('querystring').stringify(params)
       form:params
     },function(err, res) {
+      // console.log(Object.keys(res))
+      // console.log(res.statusMessage)
+      // console.log(res.body)
       expect(res.statusCode).to.equal(200);
       // expect(res.body).to.equal('wrong header');
       console.log('         TxHash Below:')
@@ -99,6 +167,42 @@ describe('API MAIN ROUTES', function() {
       console.log('         '+res.statusCode)
       done()
     })
+  })
+
+  it('Deploys an Invest Contract', function(done) {
+    // this.timeout(2000000000);
+    // params = {
+    //   tokenName:'BTC',
+    //   tokenSymbol:'btchj',
+    //   tokenDecimals:18,
+    //   projectWallet:'0xe04202f262b79aa24e09f29a3461690efdf63f63',
+    //   minimalInvestment:100,
+    //   operator:'0xe04202f262b79aa24e09f29a3461690efdf63f63',
+    //   quorum:2,
+    //   pay_in_jot:true,
+    //   sealTimestamp:2000000000
+    // }
+    // // OTHER PARAMS FOR THIS FUNCTION INCLUDE
+    //
+    // request.post({
+    //   headers: {'content-type' : 'application/x-www-form-urlencoded'},
+    //   url:     urlBase+'/contracts/deploy/ICOContract',
+    //   // json:require('querystring').stringify(params)
+    //   form:params
+    // },function(err, res) {
+    //   // console.log(Object.keys(res))
+    //   // console.log(res.statusMessage)
+    //   // console.log(res.body)
+    //   expect(res.statusCode).to.equal(200);
+    //   // expect(res.body).to.equal('wrong header');
+    //   console.log('         TxHash Below:')
+    //   console.log('         '+res.body)
+    //   console.log('         ------------------------')
+    //   console.log('         Response Status Code Below:')
+    //   console.log('         '+res.statusCode)
+    //   done()
+    // })
+
   })
 
 
