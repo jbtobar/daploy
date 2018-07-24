@@ -3,11 +3,14 @@ const express        = require('express');
 const bodyParser     = require('body-parser');
 // const jwt = require('jsonwebtoken')
 var Web3 = require('web3');
-var HDWalletProvider = require("truffle-hdwallet-provider");
-const mnemonic = process.env.MNEMONIC
-var provider = new HDWalletProvider(mnemonic, "https://ropsten.infura.io/${process.env.INFURA_ACCESS_TOKEN}");
-web3 = new Web3(provider)
-console.log(provider.addresses)
+// var HDWalletProvider = require("truffle-hdwallet-provider");
+// const mnemonic = process.env.MNEMONIC
+// var provider = new HDWalletProvider(mnemonic, "https://ropsten.infura.io/${process.env.INFURA_ACCESS_TOKEN}");
+// web3 = new Web3(provider)
+// console.log(provider.addresses)
+
+var Web3 = require("web3");
+var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 
 
 const app            = express();
