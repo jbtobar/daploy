@@ -11,28 +11,105 @@ chai.use(chaiHttp);
 urlBase= 'http://localhost:3001'
 
 describe('API MAIN ROUTES', function() {
-    it('IS ON', function(done) {
-        params = {
-          a:'a'
-        }
-        request.post({
-            headers: {'content-type' : 'application/x-www-form-urlencoded'},
-            url:     urlBase+'/deployAll',
-            form:params
-        }, function(err, res) {
-            // console.log(Object.keys(res))
-            // console.log(res.statusMessage)
-            // console.log(res.body)
-            expect(res.statusCode).to.equal(200);
-            console.log(res.body)
-            // // expect(res.body).to.equal('wrong header');
-            // console.log('         TxHash Below:')
-            // console.log('         '+res.body)
-            // console.log('         ------------------------')
-            // console.log('         Response Status Code Below:')
-            // console.log('         '+res.statusCode)
-            done()
-        })
+    // it('IS ON', function(done) {
+    //     params = {
+    //       a:'a'
+    //     }
+    //     request.post({
+    //         headers: {'content-type' : 'application/x-www-form-urlencoded'},
+    //         url:     urlBase+'/deployAll',
+    //         form:params
+    //     }, function(err, res) {
+    //         expect(res.statusCode).to.equal(200);
+    //         console.log(res.body)
+    //         done()
+    //     })
+    // })
+
+    // it('Deploys ICO', function(done) {
+    //   params = {
+    //     default:true,
+    //   }
+    //   request.post({
+    //       headers: {'content-type' : 'application/x-www-form-urlencoded'},
+    //       url:     urlBase+'/contracts/deploy/ICOContract',
+    //       form:params
+    //   }, function(err, res) {
+    //       expect(res.statusCode).to.equal(200);
+    //       console.log(res.body)
+    //       done()
+    //   })
+    // })
+
+    // it('adds a milestone to an ico', function(done) {
+    //   params = {
+    //     default:true,
+    //     defaultNumber: 3,
+    //     ICOAddress:'0x7Ba11E66BBb5d1aF0dBBb1CbE433cafa81649916',
+    //   }
+    //   request.post({
+    //       headers: {'content-type' : 'application/x-www-form-urlencoded'},
+    //       url:     urlBase+'/contracts/interact/ICOContract/milestones',
+    //       form:params
+    //   }, function(err, res) {
+    //       expect(res.statusCode).to.equal(200);
+    //       console.log(res.body)
+    //       done()
+    //   })
+    // })
+
+    // it('seals an ico', function(done) {
+    //   params = {
+    //     default:true,
+    //     ICOAddress:'0x7Ba11E66BBb5d1aF0dBBb1CbE433cafa81649916',
+    //   }
+    //   request.post({
+    //       headers: {'content-type' : 'application/x-www-form-urlencoded'},
+    //       url:     urlBase+'/contracts/interact/ICOContract/seal',
+    //       form:params
+    //   }, function(err, res) {
+    //       expect(res.statusCode).to.equal(200);
+    //       console.log(res.body)
+    //       done()
+    //   })
+    // })
+
+    // it('Investor launches Invest Contract', function(done) {
+    //   params = {
+    //     default:true,
+    //     ICOAddress:'0x7Ba11E66BBb5d1aF0dBBb1CbE433cafa81649916',
+    //   }
+    //   request.post({
+    //       headers: {'content-type' : 'application/x-www-form-urlencoded'},
+    //       url:     urlBase+'/contracts/deploy/InvestContract',
+    //       form:params
+    //   }, function(err, res) {
+    //       expect(res.statusCode).to.equal(200);
+    //       console.log(res.body)
+    //       done()
+    //   })
+    // })
+
+    it('ICO operator adds Invest Contract', function(done) {
+      params = {
+        default:true,
+        InvestContractAddress:'0xf6573A467aC26275b989AE69bE2681B0F5D55b35',
+        ICOAddress:'0x7Ba11E66BBb5d1aF0dBBb1CbE433cafa81649916',
+      }
+      request.post({
+          headers: {'content-type' : 'application/x-www-form-urlencoded'},
+          url:     urlBase+'/contracts/interact/ICOContract/addInvestContract',
+          form:params
+      }, function(err, res) {
+          expect(res.statusCode).to.equal(200);
+          console.log(res.body)
+          done()
+      })
     })
+
+
+    // it('RETURN ADDRESSES', function(done) {
+    //   request.get(urlBase+'/addresses',function(err, res,body) {console.log(res.body);done()})
+    // })
 
 })
