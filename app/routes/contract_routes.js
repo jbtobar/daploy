@@ -1,4 +1,5 @@
 // WE IMPORT THE CONTRACT JSON ARTIFACTS
+// referenceFile = require('../../reference.html')
 bldToken = require('../../build/contracts/Token.json')
 bldOracle = require('../../build/contracts/JOTOracle.json')
 bldCommissionContract = require('../../build/contracts/CommissionContract.json')
@@ -48,6 +49,10 @@ juryOnlineWallet = '0xbfa26f3a9f7daf0398c31bf754fb07ebe17c2937'
 
 //------------------------------------------------------------------------------
     // This route will deploy contracts
+    app.get('/', (req, res) => {
+      res.sendFile('reference.html',{"root": __dirname})
+    })
+
     app.post('/deployAll', async (req, res) => {
 
         console.log('ROUTE: /deployAll')
