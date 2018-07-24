@@ -42,7 +42,7 @@ module.exports = function(deployer) {
   deployer.deploy(TokenJOT, "JOT", "jot",18).then(function() {
     return deployer.deploy(CommissionContract,juryOnlineWallet,TokenJOT.address).then(function() {
       deployer.deploy(Token,"test","ttt",3).then(function() {
-        return deployer.deploy(ICOContract, Token.address,projectWallet, sealTimestamp, minimumCap, maximumCap, minimalInvestment,operator,quorum,pay_in_jot,CommissionContract.address,juryOnlineWallet,TokenJOT.address)
+        return deployer.deploy(ICOContract, Token.address,projectWallet, sealTimestamp, minimumCap, maximumCap, minimalInvestment,operator,quorum,pay_in_jot,CommissionContract.address,juryOnlineWallet,TokenJOT.address,"0xc9584E27Adf724121C24fc887b4E79B6aEca6cA4")
       })
     })
   })

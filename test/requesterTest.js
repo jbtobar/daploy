@@ -17,6 +17,9 @@ const url = 'http://localhost:3001/contracts'
 juryOnlineWallet = '0xe04202f262b79aa24e09f29a3461690efdf63f63'
 jotTokenAddress = '0x7DB792f5c27860D4fEC36F2Dd9f85090f22590B4'
 
+commissionContractAddress = '0x85b95120365B328dBe4cF159D3C48f05AD9c1CFa'
+jotOracleAddress = '0x53C28f4688f59d57a8c73B42Dc7948c6f092c52C'
+
 params = {
   tokenName:'BTC',
   tokenSymbol:'btchj',
@@ -134,74 +137,89 @@ describe('API MAIN ROUTES', function() {
   //
   // })
 
-  it('Deploys an ICOContract', function(done) {
-    this.timeout(2000000000);
-    params = {
-      tokenName:'BTC',
-      tokenSymbol:'btchj',
-      tokenDecimals:18,
-      projectWallet:'0xe04202f262b79aa24e09f29a3461690efdf63f63',
-      minimalInvestment:100,
-      operator:'0xe04202f262b79aa24e09f29a3461690efdf63f63',
-      quorum:2,
-      pay_in_jot:true,
-      sealTimestamp:2000000000
-    }
-    // OTHER PARAMS FOR THIS FUNCTION INCLUDE
+  // it('Deploys an ICOContract', function(done) {
+  //   this.timeout(2000000000);
+  //   params = {
+  //     tokenName:'BTC',
+  //     tokenSymbol:'btchj',
+  //     tokenDecimals:18,
+  //     projectWallet:'0xe04202f262b79aa24e09f29a3461690efdf63f63',
+  //     minimalInvestment:100,
+  //     operator:'0xe04202f262b79aa24e09f29a3461690efdf63f63',
+  //     quorum:2,
+  //     pay_in_jot:true,
+  //     sealTimestamp:2000000000
+  //   }
+  //   // OTHER PARAMS FOR THIS FUNCTION INCLUDE
+  //
+  //   request.post({
+  //     headers: {'content-type' : 'application/x-www-form-urlencoded'},
+  //     url:     urlBase+'/contracts/deploy/ICOContract',
+  //     // json:require('querystring').stringify(params)
+  //     form:params
+  //   },function(err, res) {
+  //     // console.log(Object.keys(res))
+  //     // console.log(res.statusMessage)
+  //     // console.log(res.body)
+  //     expect(res.statusCode).to.equal(200);
+  //     // expect(res.body).to.equal('wrong header');
+  //     console.log('         TxHash Below:')
+  //     console.log('         '+res.body)
+  //     console.log('         ------------------------')
+  //     console.log('         Response Status Code Below:')
+  //     console.log('         '+res.statusCode)
+  //     done()
+  //   })
+  // })
 
-    request.post({
-      headers: {'content-type' : 'application/x-www-form-urlencoded'},
-      url:     urlBase+'/contracts/deploy/ICOContract',
-      // json:require('querystring').stringify(params)
-      form:params
-    },function(err, res) {
-      // console.log(Object.keys(res))
-      // console.log(res.statusMessage)
-      // console.log(res.body)
-      expect(res.statusCode).to.equal(200);
-      // expect(res.body).to.equal('wrong header');
-      console.log('         TxHash Below:')
-      console.log('         '+res.body)
-      console.log('         ------------------------')
-      console.log('         Response Status Code Below:')
-      console.log('         '+res.statusCode)
-      done()
-    })
-  })
+  // it('adds an ICO to the CommissionContract Whitelist', function(done) {
+  //   params = {
+  //     ICOContractAddress: '0xBc337E449252b9548000e65c49A22da2E08D7047'
+  //   }
+  //   request.post({
+  //     headers: {'content-type' : 'application/x-www-form-urlencoded'},
+  //     url:     urlBase+'/contracts/interact/CommissionContract',
+  //     // json:require('querystring').stringify(params)
+  //     form:params
+  //   }, function(err, res) {
+  //       expect(res.statusCode).to.equal(200);
+  //       console.log('         TxHash Below:')
+  //       console.log('         '+res.body)
+  //       console.log('         ------------------------')
+  //       console.log('         Response Status Code Below:')
+  //       console.log('         '+res.statusCode)
+  //       done()
+  //   })
+  // })
 
   it('Deploys an Invest Contract', function(done) {
-    // this.timeout(2000000000);
-    // params = {
-    //   tokenName:'BTC',
-    //   tokenSymbol:'btchj',
-    //   tokenDecimals:18,
-    //   projectWallet:'0xe04202f262b79aa24e09f29a3461690efdf63f63',
-    //   minimalInvestment:100,
-    //   operator:'0xe04202f262b79aa24e09f29a3461690efdf63f63',
-    //   quorum:2,
-    //   pay_in_jot:true,
-    //   sealTimestamp:2000000000
-    // }
-    // // OTHER PARAMS FOR THIS FUNCTION INCLUDE
-    //
-    // request.post({
-    //   headers: {'content-type' : 'application/x-www-form-urlencoded'},
-    //   url:     urlBase+'/contracts/deploy/ICOContract',
-    //   // json:require('querystring').stringify(params)
-    //   form:params
-    // },function(err, res) {
-    //   // console.log(Object.keys(res))
-    //   // console.log(res.statusMessage)
-    //   // console.log(res.body)
-    //   expect(res.statusCode).to.equal(200);
-    //   // expect(res.body).to.equal('wrong header');
-    //   console.log('         TxHash Below:')
-    //   console.log('         '+res.body)
-    //   console.log('         ------------------------')
-    //   console.log('         Response Status Code Below:')
-    //   console.log('         '+res.statusCode)
-    //   done()
-    // })
+    this.timeout(2000000000);
+      params = {
+        ICOContractAddress: '0xBc337E449252b9548000e65c49A22da2E08D7047',
+        investorAddress: '0xe04202f262b79aa24e09f29a3461690efdf63f63',
+        etherAmount:10000,
+        tokenAmount:5000,
+      }
+
+      request.post({
+        headers: {'content-type' : 'application/x-www-form-urlencoded'},
+        url:     urlBase+'/contracts/deploy/InvestContract',
+        // json:require('querystring').stringify(params)
+        form:params
+      },function(err, res) {
+        // console.log(Object.keys(res))
+        // console.log(res.statusMessage)
+        // console.log(res.body)
+        expect(res.statusCode).to.equal(200);
+        // expect(res.body).to.equal('wrong header');
+        console.log('         TxHash Below:')
+        console.log('         '+res.body)
+        console.log('         ------------------------')
+        console.log('         Response Status Code Below:')
+        console.log('         '+res.statusCode)
+        done()
+      })
+
 
   })
 
@@ -253,6 +271,8 @@ describe('API MAIN ROUTES', function() {
     //   //   done();
     //   // }, 200000);
     // });
+
+
 
 
 

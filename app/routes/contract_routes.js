@@ -7,6 +7,7 @@ contractList = ['ICOContract','InvestContract','CommissionContract','JOTOracle',
 // let codeICO = bldICO.bytecode
 // var ICOContract = new web3.eth.Contract(abiICO);
 const ad1 = '0xe04202f262b79aa24e09f29a3461690efdf63f63'
+commissionContractAddress = '0x85b95120365B328dBe4cF159D3C48f05AD9c1CFa'
 
 bld = require('../../build/contracts/Token.json')
 let abi = bld.abi
@@ -206,6 +207,37 @@ module.exports = function(app, web3) {
    }
  })
 
+   // app.post('/contracts/interact/ICOContract/mint', (req, res) => {
+   //   await token.mint(icoContract.address, tokenAmount*500, {from: accounts[0]});
+   //   await token.start({from: accounts[0]});
+   //   balance = await token.balanceOf(icoContract.address);
+   // })
+
+  app.post('/contracts/interact/CommissionContract/addWhitelist', (req, res) => {
+    bld = require('../../build/contracts/CommissionContract.json')
+    let abi = bld.abi
+    let code = bld.bytecode
+    var CommissionContract = new web3.eth.Contract(abi,commissionContractAddress);
+    CommissionContract.methods.addWhitelist('0x9837E3Ee8E28fF0d72829f17D6C25399872633B8').send({
+      from: ad1,
+      gas: 2000000,
+      gasPrice: '30000000000'
+    }, function(error, transactionHash) {
+      if (error) {
+        console.log(error)
+        res.status(207).send(error)
+      } else {
+
+        console.log(transactionHash)
+        res.status(200).send(transactionHash)
+      }
+    }).then(function(newContractInstance){
+      console.log(newContractInstance)
+      console.log('CommissionContract addWhitelist FINISHED')
+      res.status(200).send(newContractInstance)
+  })
+})
+
   app.post('/contracts/deploy/CommissionContract2', (req, res) => {
     function CommissionContractDeploy () {
       bld = require('../../build/contracts/CommissionContract.json')
@@ -285,6 +317,11 @@ module.exports = function(app, web3) {
   //   // console.log(req.query)
   //   // console.log(req.body)
   //   res.status(200).json({good:'good'})
+  // })
+
+  // app.post('/contracts/deploy/full/ICOContract/', (req, res) => {
+  //
+  //
   // })
 
   app.post('/contracts/deploy/ICOContract', (req, res) => {
@@ -384,10 +421,86 @@ module.exports = function(app, web3) {
           console.log('ICO CONTRACT DEPLOY FINISHED')
           // console.log('ICO ADDRESS: ', newContractInstance.options.address)
           res.status(200).json({'ico':ni,'token':tokenInfo})
-
+          mintTokens(newContractInstance.options.address,tokenAddress)
         });
+        function mintTokens(ni,tokenAddress) {
+          console.log('ABOUT TO MINT THEM TOKENS')
+          console.log(ni)
+          console.log(tokenAddress)
+          bld = require('../../build/contracts/Token.json')
+          let abi = bld.abi
+          // let code = bld.bytecode
+          var deployedToken = new web3.eth.Contract(abi,tokenAddress);
+          deployedToken.methods.mint(ni, 5000).send({
+            from: ad1,
+            gas: 4712388,
+            gasPrice: '30000000000'
+          }, function(error, txHash) {
+            console.log(error)
+            console.log(txHash)
+          }).then(function(d){
+            console.log('MINTED THEM TOKAHS')
+            console.log(d)
+            console.log('about to call Start Method')
+            deployedToken.methods.start().send({
+              from: ad1,
+              gas: 4712388,
+              gasPrice: '30000000000'
+            }, function(error, txHash) {
+              console.log(error)
+              console.log(txHash)
+            }).then(function(d) {
+              console.log('MINTED DONE!!')
+              console.log(d)
+              // CommissionContract.methods.addWhitelist('0xBc337E449252b9548000e65c49A22da2E08D7047').send({from:ad1,gas: 2000000,gasPrice: '30000000000'}).then(function(d){console.log(d)})
+            })
+          })
 
+        }
     }
+  })
+
+  app.post('/contracts/deploy/InvestContract', (req, res) => {
+    console.log('INVEST CONTRACT DEPLOYMENT')
+    console.log(req.body)
+    bld = require('../../build/contracts/InvestContract.json')
+    let abi = bld.abi
+    let code = bld.bytecode
+    var InvestContract = new web3.eth.Contract(abi);
+
+    var ICOContractAddress = req.body.ICOContractAddress
+    var investorAddress = req.body.investorAddress
+    var etherAmount = req.body.etherAmount
+    var tokenAmount = req.body.tokenAmount
+    var args = [ICOContractAddress, investorAddress, etherAmount, tokenAmount]
+    InvestContract.deploy({
+      data: code,
+      arguments: args
+    }).send({
+      from: ad1,
+      gas: 4712388,
+      gasPrice: '30000000000'}, function(error, transactionHash){
+        if (error) { res.status(207).json({'error': error}) }
+        console.log(error);
+        console.log(transactionHash)
+      }).then(function(newContractInstance){
+        var ni = {
+          address:newContractInstance.options.address,
+          jsonInterface:newContractInstance.options.jsonInterface,
+          data:newContractInstance.options.data,
+          from:newContractInstance.options.from,
+          gasPrice:newContractInstance.options.gasPrice,
+          gas:newContractInstance.options.gas,
+        }
+        // grabba['then'] = ni
+        // contractlog[newContractInstance.options.address] = ni
+        // io.emit('make_escrow',{on:'then',data:ni})
+        console.log(ni)
+        console.log('ICO CONTRACT DEPLOY FINISHED')
+        // console.log('ICO ADDRESS: ', newContractInstance.options.address)
+        res.status(200).json({'investContract':ni})
+
+      });
 
   })
 };

@@ -74,10 +74,10 @@ contract('ICOContract', function(accounts) {
     token = await Token.new('testname', 'testsymbol', 3, {from:accounts[0]})
   });
   it('Deploy CommissionContract', async function() {
-    commissionContract = await CommissionContract.new({from:accounts[0]})
+    commissionContract = await CommissionContract.new(juryOnlineWallet,TokenJOT.address,{from:accounts[0]})
   })
   it('Deploy ICOContract', async function() {
-    icoContract = await ICOContract.new(token.address,projectWallet, sealTimestamp, minimumCap, maximumCap, minimalInvestment,operator,quorum,pay_in_jot,commissionContract.address,juryOnlineWallet,TokenJOT.address, {from:accounts[0]});
+    icoContract = await ICOContract.new(token.address,projectWallet, sealTimestamp, minimumCap, maximumCap, minimalInvestment,operator,quorum,pay_in_jot,commissionContract.address,juryOnlineWallet,TokenJOT.address, oracle.address,{from:accounts[0]});
     // icoContract = await ICOContract.new(token.address, projectWallet, sealTimestamp, minimumCap, maximumCap, minimalInvestment, accounts[0],quorum,pay_in_jot,TokenJOT.address,CommissionContract.address, {from: accounts[0]});
   })
   it('adds the new ICO to the Commission Contract whitelist', async function() {
